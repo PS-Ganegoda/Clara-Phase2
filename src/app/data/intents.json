@@ -1,0 +1,86 @@
+{
+  "intents": [
+    {
+      "tag": "greeting",
+      "patterns": ["Hi", "Hello", "Hey", "Good morning", "Good evening"],
+      "responses": ["Hello! I'm Clara 🤖, the virtual assistant of Piumi Saranga. How can I help you today?"]
+    },
+    {
+      "tag": "about_me",
+      "patterns": ["Who are you?", "Tell me about yourself", "Introduce yourself", "About Piumi Saranga"],
+      "responses": [
+        "I am Clara, the virtual assistant of Piumi Saranga. I can answer questions about Piumi's skills, projects, and experience."
+      ]
+    },
+    {
+      "tag": "skills",
+      "patterns": ["What are your skills?", "Tech stack", "What technologies do you use?", "Your expertise?"],
+      "responses": [
+        "I can tell you about Piumi's skills: Python, Selenium, React, TypeScript, and QA automation tools."
+      ]
+    },
+    {
+      "tag": "projects",
+      "patterns": ["What projects have you done?", "Portfolio projects?", "Show me your work", "Recent projects"],
+      "responses": [
+        "Piumi has built a chatbot using Python and TensorFlow, and worked on QA automation frameworks for web applications."
+      ]
+    },
+    {
+      "tag": "experience",
+      "patterns": ["Work experience?", "Are you a fresher?", "Previous roles?", "Professional experience?"],
+      "responses": [
+        "Piumi has experience as an Associate QA Engineer, working on both manual and automated testing projects."
+      ]
+    },
+     {
+      "tag": "Currently work",
+      "patterns": ["Where she currently worked","where she work in this yeras"],
+      "responses": [
+        "currently piumi works as a associate quality assurance engineer in Eleos web tech "
+      ]
+    },
+     {
+      "tag": "previous workse",
+      "patterns": ["did she have previos works experiences","where she previously worked"],
+      "responses": [
+        "absolutly she is works as a software engineering intern as well as quality assurance internn in Paraqum Technologies "
+      ]
+    },
+    {
+      "tag": "education",
+      "patterns": ["Education?", "Degree?", "Where did you study?", "Academic background?"],
+      "responses": [
+        "Piumi has completed a degree in [Your Degree] from [Your University]."
+      ]
+    },
+    {
+      "tag": "contact",
+      "patterns": ["How can I contact you?", "Email?", "LinkedIn?", "GitHub?"],
+      "responses": [
+        "You can reach Piumi via email at piumi@example.com, or check GitHub at github.com/piumi and LinkedIn at linkedin.com/in/piumi."
+      ]
+    },
+    {
+      "tag": "resume",
+      "patterns": ["Can I download your resume?", "CV?", "Resume link?"],
+      "responses": [
+        "You can download Piumi's resume here: [insert your resume link]."
+      ]
+    },
+    {
+      "tag": "hire_me",
+      "patterns": ["Are you available?", "Open to work?", "Can we hire you?", "Job opportunities?"],
+      "responses": [
+        "Yes, Piumi is open to opportunities. Feel free to contact via email or LinkedIn."
+      ]
+    },
+    {
+      "tag": "fallback",
+      "patterns": ["", " "],
+      "responses": [
+        "I'm Clara, Piumi's virtual assistant. I can answer questions about skills, projects, or contact info."
+      ]
+    }
+  ]
+}
