@@ -1,5 +1,5 @@
 # -----------------------------
-# Base image (TensorFlow-ready)
+# Base image
 # -----------------------------
 FROM tensorflow/tensorflow:2.20.0
 
@@ -10,33 +10,38 @@ ENV PYTHONUNBUFFERED=1 \
     PYTHONDONTWRITEBYTECODE=1
 
 # -----------------------------
-# Set working directory
+# Working directory
 # -----------------------------
 WORKDIR /app
 
 # -----------------------------
-# Copy requirements first
+# Copy requirements
 # -----------------------------
 COPY requirements.txt .
 
 # -----------------------------
-# Install Python dependencies
+# Install dependencies
 # -----------------------------
 RUN pip install --no-cache-dir --upgrade pip \
     && pip install --no-cache-dir -r requirements.txt
 
 # -----------------------------
-# Download NLTK data at build time
+# Download NLTK data (FIX)
 # -----------------------------
-RUN python -m nltk.downloader punkt wordnet
+RUN python - <<EOF
+import nltk
+nltk.download('punkt')
+nltk.download('punkt_tab')
+nltk.download('wordnet')
+EOF
 
 # -----------------------------
-# Copy application code
+# Copy app code
 # -----------------------------
 COPY . .
 
 # -----------------------------
-# Expose FastAPI port
+# Expose port
 # -----------------------------
 EXPOSE 8000
 
