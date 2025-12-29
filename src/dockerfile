@@ -1,8 +1,7 @@
 # -----------------------------
-# Base image
+# Base image (TensorFlow-ready)
 # -----------------------------
 FROM tensorflow/tensorflow:2.20.0
-
 
 # -----------------------------
 # Environment variables
@@ -16,16 +15,7 @@ ENV PYTHONUNBUFFERED=1 \
 WORKDIR /app
 
 # -----------------------------
-# System dependencies (needed for nltk & tensorflow)
-# -----------------------------
-RUN apt-get update && apt-get install -y \
-    gcc \
-    build-essential \
-    curl \
-    && rm -rf /var/lib/apt/lists/*
-
-# -----------------------------
-# Copy requirements first (cache-friendly)
+# Copy requirements first
 # -----------------------------
 COPY requirements.txt .
 
@@ -37,9 +27,8 @@ RUN pip install --no-cache-dir --upgrade pip \
 
 # -----------------------------
 # Download NLTK data at build time
-# (prevents runtime crash)
 # -----------------------------
-RUN python -m nltk.downloader punkt punkt_tab wordnet
+RUN python -m nltk.downloader punkt wordnet
 
 # -----------------------------
 # Copy application code
@@ -52,6 +41,6 @@ COPY . .
 EXPOSE 8000
 
 # -----------------------------
-# Start FastAPI (NO --reload)
+# Start FastAPI
 # -----------------------------
 CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
