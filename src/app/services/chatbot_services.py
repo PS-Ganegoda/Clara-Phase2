@@ -1,14 +1,5 @@
 import nltk
-
-try:
-    nltk.data.find("tokenizers/punkt")
-except LookupError:
-    nltk.download("punkt")
-    
-try:
-    nltk.data.find("tokenizers/punkt_tab")
-except LookupError:
-    nltk.download("punkt_tab")
+from nltk.stem import WordNetLemmatizer
 
 import random
 import pickle
