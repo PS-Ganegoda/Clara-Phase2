@@ -7,10 +7,7 @@ router = APIRouter()
 class ChatRequest(BaseModel):
     message: str
 
-class ChatResponse(BaseModel):
-    reply: str
-
-@router.post("/chat", response_model=ChatResponse)
+@router.post("/")
 def chat(request: ChatRequest):
     reply = get_bot_response(request.message)
-    return ChatResponse(reply=reply)
+    return {"reply": reply}

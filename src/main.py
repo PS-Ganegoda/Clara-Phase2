@@ -1,13 +1,10 @@
 from fastapi import FastAPI
 from app.api.chat import router as chat_router
-from app.services.chatbot_services import get_model
 
-app = FastAPI()
+app = FastAPI(title="Chatbot API")
 
-# Include chat routes
-app.include_router(chat_router)
+app.include_router(chat_router, prefix="/chat", tags=["chat"])
 
-# Warm up model on startup
-@app.on_event("startup")
-def startup_event():
-    get_model()
+@app.get("/")
+def health():
+    return {"status": "API running"}
