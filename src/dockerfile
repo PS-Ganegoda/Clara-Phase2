@@ -44,4 +44,6 @@ EXPOSE 8000
 # Start FastAPI
 # -----------------------------
 # Use sh -c to allow the use of environment variables in the comman
-CMD ["sh", "-c", "python -m uvicorn src.main:app --host 0.0.0.0 --port ${PORT:-8000}"]
+
+# We add '.' to the PYTHONPATH so it can find the 'src' folder
+CMD ["sh", "-c", "PYTHONPATH=. python3 -m uvicorn src.main:app --host 0.0.0.0 --port ${PORT:-8000}"]
