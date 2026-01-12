@@ -12,7 +12,7 @@ ENV PYTHONUNBUFFERED=1 \
 # -----------------------------
 # Working directory
 # -----------------------------
-WORKDIR /app
+WORKDIR /src
 
 # -----------------------------
 # Copy requirements
