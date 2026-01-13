@@ -19,15 +19,13 @@ RUN pip install --no-cache-dir --upgrade pip && \
     pip install --no-cache-dir -r requirements.txt
 
 # 5. Download NLP data
-RUN python -m nltk.downloader punkt wordnet
+RUN python -m nltk.downloader punkt wordnet punkt_tab
 
 # 6. Copy the entire project folder into the Docker image
-# This copies everything into /app, so your 'src' folder becomes /app/src
 COPY . .
 
 # 7. Expose the port Northflank expects
 EXPOSE 8000
 
-# 8. THE CRITICAL FIX:
-# We force the PYTHONPATH to be the current directory (.) inside the command.
+# 8. Run the app with PYTHONPATH set
 CMD ["sh", "-c", "PYTHONPATH=. uvicorn src.main:app --host 0.0.0.0 --port ${PORT:-8000}"]
