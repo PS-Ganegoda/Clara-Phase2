@@ -1,20 +1,26 @@
 FROM python:3.11-slim
 
-# 1. Set the root of the app
+# 1. Environment variables
+ENV PYTHONUNBUFFERED=1 \
+    PYTHONDONTWRITEBYTECODE=1 \
+    PYTHONPATH=/app
+
+# 2. Set working directory
 WORKDIR /app
 
-# 2. Tell Python that /app is the base for all imports
-ENV PYTHONPATH=/app
-
-# 3. Install requirements first (for faster builds)
+# 3. Install dependencies
+# We install these first so they are cached by Docker
 COPY requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install --no-cache-dir --upgrade pip && \
+    pip install --no-cache-dir -r requirements.txt
 RUN python -m nltk.downloader punkt wordnet
 
-# 4. Copy your entire project into /app
-# This means your folder structure inside Docker will be /app/src/main.py
+# 4. Copy ALL files from your computer into the /app folder in Docker
 COPY . .
 
-# 5. The Command
-# We use 'src.main:app' because we are at the /app level
+# 5. Expose the port
+EXPOSE 8000
+
+# 6. Start Uvicorn using the module path relative to PYTHONPATH
+# This is the line that fixes the 'ModuleNotFoundError'
 CMD ["sh", "-c", "uvicorn src.main:app --host 0.0.0.0 --port ${PORT:-8000}"]
