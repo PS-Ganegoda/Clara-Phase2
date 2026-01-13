@@ -1,29 +1,20 @@
 FROM python:3.11-slim
 
-# Prevent Python from buffering logs (so you see errors immediately)
-ENV PYTHONUNBUFFERED=1 \
-    PYTHONDONTWRITEBYTECODE=1 \
-    PYTHONPATH=/app
+# 1. Set the root of the app
+WORKDIR /app
 
-WORKDIR /src
+# 2. Tell Python that /app is the base for all imports
+ENV PYTHONPATH=/app
 
-# Install basic build tools
-RUN apt-get update && apt-get install -y --no-install-recommends \
-    build-essential \
-    && rm -rf /var/lib/apt/lists/*
-
-# Install Python requirements
+# 3. Install requirements first (for faster builds)
 COPY requirements.txt .
-RUN pip install --no-cache-dir --upgrade pip \
-    && pip install --no-cache-dir -r requirements.txt
-
-# Download NLTK data
+RUN pip install --no-cache-dir -r requirements.txt
 RUN python -m nltk.downloader punkt wordnet
 
-# Copy the rest of the project
+# 4. Copy your entire project into /app
+# This means your folder structure inside Docker will be /app/src/main.py
 COPY . .
 
-EXPOSE 8000
-
-# Start command with dynamic PORT for Northflank
+# 5. The Command
+# We use 'src.main:app' because we are at the /app level
 CMD ["sh", "-c", "uvicorn src.main:app --host 0.0.0.0 --port ${PORT:-8000}"]
