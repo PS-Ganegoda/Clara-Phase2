@@ -12,74 +12,240 @@
         "I am Clara, the virtual assistant of Piumi Saranga. I can answer questions about Piumi's skills, projects, and experience."
       ]
     },
+  
+    {
+      "tag": "greeting",
+      "patterns": [
+        "hello",
+        "hi",
+        "hey",
+        "good morning",
+        "good evening",
+        "hi clara",
+        "hello clara",
+        "hey assistant",
+        "is anyone there"
+      ],
+      "responses": [
+        "Hello! 👋 I’m Clara, Piumi Saranga’s virtual assistant. How may I help you?",
+        "Hi there! I’m Clara. You can ask me anything about Piumi’s background or work.",
+        "Hey! I’m here to help you learn more about Piumi."
+      ]
+    },
+    {
+      "tag": "who_is_piumi",
+      "patterns": [
+        "who is piumi",
+        "who is piumi saranga",
+        "tell me about piumi",
+        "about piumi",
+        "introduce piumi",
+        "can you describe piumi"
+      ],
+      "responses": [
+        "Piumi Saranga is a Quality Assurance Engineer and web developer with a strong focus on software quality and user experience.",
+        "Piumi is a versatile technology professional skilled in QA and modern web development.",
+        "She is a Computer Science graduate who combines testing expertise with development skills."
+      ]
+    },
+    {
+      "tag": "current_role",
+      "patterns": [
+        "what does she do",
+        "what is her job",
+        "what is piumi's role",
+        "what does piumi work as",
+        "current position"
+      ],
+      "responses": [
+        "Piumi currently works as an Associate Quality Assurance Engineer.",
+        "She is employed as an Associate QA Engineer, focusing on software reliability and usability.",
+        "Her role involves testing applications and ensuring high quality standards."
+      ]
+    },
     {
       "tag": "skills",
-      "patterns": ["What are your skills?", "Tech stack", "What technologies do you use?", "Your expertise?"],
+      "patterns": [
+        "what are her skills",
+        "piumi skills",
+        "technical skills",
+        "what technologies does she know",
+        "what is she good at"
+      ],
       "responses": [
-        "I can tell you about Piumi's skills: Python, Selenium, React, TypeScript, and QA automation tools."
+        "Piumi’s skills include Quality Assurance, manual and automated testing, and web development.",
+        "She is experienced in QA methodologies, test case design, and frontend development.",
+        "Her skill set combines strong testing practices with programming knowledge."
       ]
     },
     {
-      "tag": "projects",
-      "patterns": ["What projects have you done?", "Portfolio projects?", "Show me your work", "Recent projects"],
+      "tag": "qa_skills",
+      "patterns": [
+        "qa skills",
+        "testing skills",
+        "what testing does she do",
+        "quality assurance experience"
+      ],
       "responses": [
-        "Piumi has built a chatbot using Python and TensorFlow, and worked on QA automation frameworks for web applications."
+        "Piumi has experience in manual testing, test planning, and defect tracking.",
+        "She applies structured QA practices to ensure reliable and user-friendly products.",
+        "Her QA expertise focuses on functional testing and quality validation."
       ]
     },
     {
-      "tag": "experience",
-      "patterns": ["Work experience?", "Are you a fresher?", "Previous roles?", "Professional experience?"],
+      "tag": "development_skills",
+      "patterns": [
+        "does she code",
+        "is she a developer",
+        "web development skills",
+        "programming skills"
+      ],
       "responses": [
-        "Piumi has experience as an Associate QA Engineer, working on both manual and automated testing projects."
-      ]
-    },
-     {
-      "tag": "Currently work",
-      "patterns": ["Where she currently worked","where she work in this yeras"],
-      "responses": [
-        "currently piumi works as a associate quality assurance engineer in Eleos web tech "
-      ]
-    },
-     {
-      "tag": "previous workse",
-      "patterns": ["did she have previos works experiences","where she previously worked"],
-      "responses": [
-        "absolutly she is works as a software engineering intern as well as quality assurance internn in Paraqum Technologies "
+        "Yes, Piumi also works in web development alongside her QA responsibilities.",
+        "She builds web applications and enjoys working with modern frontend technologies.",
+        "Her development skills complement her testing expertise."
       ]
     },
     {
       "tag": "education",
-      "patterns": ["Education?", "Degree?", "Where did you study?", "Academic background?"],
+      "patterns": [
+        "where did she study",
+        "education background",
+        "degree",
+        "university of colombo",
+        "ucsc"
+      ],
       "responses": [
-        "Piumi has completed a degree in [Your Degree] from [Your University]."
+        "Piumi is a Computer Science graduate from the University of Colombo School of Computing.",
+        "She completed her degree in Computer Science at UCSC.",
+        "Her academic background provided a strong foundation in computing and problem-solving."
+      ]
+    },
+    {
+      "tag": "certifications",
+      "patterns": [
+        "is she certified",
+        "piumi certifications",
+        "istqb",
+        "testing certification"
+      ],
+      "responses": [
+        "Piumi is an ISTQB Foundation Level certified tester.",
+        "She holds an ISTQB certification, strengthening her structured testing knowledge.",
+        "This certification supports her professional QA practices."
+      ]
+    },
+    {
+      "tag": "experience",
+      "patterns": [
+        "how much experience does she have",
+        "piumi experience",
+        "years of experience",
+        "work experience"
+      ],
+      "responses": [
+        "Piumi has over one year of experience in Quality Assurance.",
+        "She has gained hands-on experience through real-world projects.",
+        "Her experience spans both QA and development work."
+      ]
+    },
+    {
+      "tag": "projects",
+      "patterns": [
+        "projects",
+        "piumi projects",
+        "how many projects has she done",
+        "portfolio work"
+      ],
+      "responses": [
+        "Piumi has worked on more than five projects across QA and development.",
+        "Her portfolio includes projects focused on quality, performance, and usability.",
+        "She has contributed to both academic and professional projects."
+      ]
+    },
+    {
+      "tag": "strengths",
+      "patterns": [
+        "what are her strengths",
+        "what makes her unique",
+        "why hire piumi",
+        "her strong points"
+      ],
+      "responses": [
+        "Piumi’s strengths include attention to detail, analytical thinking, and strong QA practices.",
+        "She combines testing precision with development knowledge.",
+        "Her ability to think from a user’s perspective is a key strength."
+      ]
+    },
+    {
+      "tag": "interests",
+      "patterns": [
+        "what are her interests",
+        "what does she like",
+        "what is she passionate about"
+      ],
+      "responses": [
+        "Piumi is passionate about Quality Assurance, web development, and continuous learning.",
+        "She enjoys exploring new technologies and improving her technical skills.",
+        "Her interests include testing, development, and problem-solving."
+      ]
+    },
+    {
+      "tag": "career_goals",
+      "patterns": [
+        "career goals",
+        "future plans",
+        "what does she want to do",
+        "where does she see herself"
+      ],
+      "responses": [
+        "Piumi aims to grow as a QA professional while expanding her development expertise.",
+        "Her goal is to contribute to high-quality software products.",
+        "She is focused on continuous professional growth in tech."
       ]
     },
     {
       "tag": "contact",
-      "patterns": ["How can I contact you?", "Email?", "LinkedIn?", "GitHub?"],
+      "patterns": [
+        "how can i contact her",
+        "contact details",
+        "how to reach piumi",
+        "email",
+        "linkedin",
+        "github"
+      ],
       "responses": [
-        "You can reach Piumi via email at piumi@example.com, or check GitHub at github.com/piumi and LinkedIn at linkedin.com/in/piumi."
+        "You can find Piumi’s contact and social links on her portfolio website.",
+        "Her LinkedIn and GitHub profiles are accessible through the portfolio.",
+        "Feel free to connect with her using the social icons on the site."
       ]
     },
     {
-      "tag": "resume",
-      "patterns": ["Can I download your resume?", "CV?", "Resume link?"],
+      "tag": "who_are_you",
+      "patterns": [
+        "who are you",
+        "what is clara",
+        "are you a bot",
+        "who am i chatting with"
+      ],
       "responses": [
-        "You can download Piumi's resume here: [insert your resume link]."
-      ]
-    },
-    {
-      "tag": "hire_me",
-      "patterns": ["Are you available?", "Open to work?", "Can we hire you?", "Job opportunities?"],
-      "responses": [
-        "Yes, Piumi is open to opportunities. Feel free to contact via email or LinkedIn."
+        "I’m Clara, the virtual assistant for Piumi Saranga.",
+        "I’m Clara, designed to help answer questions about Piumi’s profile and work.",
+        "I’m a virtual assistant created to guide you through Piumi’s portfolio."
       ]
     },
     {
       "tag": "fallback",
-      "patterns": ["", " "],
+      "patterns": [
+        "i don't understand",
+        "that doesn't help",
+        "something else",
+        "random question"
+      ],
       "responses": [
-        "I'm Clara, Piumi's virtual assistant. I can answer questions about skills, projects, or contact info."
+        "I can help you learn more about Piumi’s skills, experience, projects, or background.",
+        "Feel free to ask about Piumi’s education, work, or technical expertise.",
+        "I’m here to assist with questions related to Piumi’s professional profile."
       ]
     }
   ]
